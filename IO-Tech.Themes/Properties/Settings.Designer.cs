@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IO_Tech.client.Properties {
+namespace IO_Tech.Themes.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
