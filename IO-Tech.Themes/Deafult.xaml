@@ -6,5 +6,12 @@
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/TextBlock.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ScrollViewer.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ListBox.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/TextBox.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Button.xaml" />
+
+
+        <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomPackIcon/PackIcon.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomUnderline/Underline.xaml" />
+
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -4,11 +4,14 @@
     xmlns:conv="clr-namespace:IO_Tech.Themes.Converters"
     xmlns:customCard="clr-namespace:IO_Tech.Themes.CustomControls.CustomCard"
     xmlns:customPackIcon="clr-namespace:IO_Tech.Themes.CustomControls.CustomPackIcon"
+    xmlns:customUnderline="clr-namespace:IO_Tech.Themes.CustomControls.CustomUnderline"
     xmlns:helpers="clr-namespace:IO_Tech.Themes.Helpers"
     xmlns:wpf="clr-namespace:IO_Tech.Themes.CustomControls.CustomRipple.MaterialDesignThemes.Wpf">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomRipple/Ripple.xaml" />
+
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ScrollViewer.xaml" />
         <ResourceDictionary>
             <conv:BrushRoundConverter x:Key="BrushRoundConverter" />
             <conv:BorderClipConverter x:Key="BorderClipConverter" />
@@ -254,10 +257,12 @@
 
     <Style x:Key="ListBoxItem" TargetType="{x:Type ListBoxItem}">
         <Setter Property="Background" Value="{DynamicResource SectionBackground}" />
-        <Setter Property="Margin" Value="0 1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SectionBackground}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Margin" Value="0,1" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
-        <Setter Property="Padding" Value="18,6" />
-        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Padding" Value="6" />
+        <Setter Property="FontSize" Value="16" />
         <Setter Property="FontWeight" Value="Light" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
@@ -281,8 +286,8 @@
 
                             <Border
                                 x:Name="SelectedBorder"
-                                Background="{TemplateBinding Foreground,
-                                                             Converter={StaticResource BrushRoundConverter}}"
+                                Background="{DynamicResource SelectionBgBrush}"
+                                BorderBrush="{DynamicResource SelectionBorderBrush}"
                                 Opacity="0" />
                             <wpf:Ripple
                                 x:Name="Ripple"
@@ -328,7 +333,7 @@
                                         <DoubleAnimation
                                             Storyboard.TargetName="SelectedBorder"
                                             Storyboard.TargetProperty="Opacity"
-                                            To="0.18"
+                                            To="1"
                                             Duration="0" />
                                     </Storyboard>
                                 </VisualState>
@@ -348,6 +353,11 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value=".56" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource SelectionBorderBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource SelectionBgBrush}" />
+
                         </Trigger>
                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=(helpers:ListBoxItemAssist.ShowSelection)}" Value="False">
                             <Setter TargetName="MouseOverBorder" Property="Visibility" Value="Collapsed" />
@@ -384,15 +394,19 @@
     </Style>
 
     <Style x:Key="NavigationListBoxItem" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
         <Setter Property="Background" Value="{DynamicResource SectionBackground}" />
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="helpers:TextFieldAssist.UnderlineBrush" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="helpers:TextFieldAssist.UnderlineCornerRadius" Value="1" />
+        <Setter Property="helpers:TextFieldAssist.DecorationVisibility" Value="Visible" />
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="Padding" Value="8" />
+        <Setter Property="FontSize" Value="18" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Margin" Value="4,2,4,2" />
-        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="FontWeight" Value="Light" />
         <Setter Property="helpers:ListBoxItemAssist.CornerRadius" Value="4" />
 
         <Setter Property="Template">
@@ -436,6 +450,12 @@
                                 Focusable="False"
                                 RecognizesAccessKey="False"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <customUnderline:Underline
+                                x:Name="Underline"
+                                VerticalAlignment="Bottom"
+                                Background="{TemplateBinding helpers:TextFieldAssist.UnderlineBrush}"
+                                CornerRadius="{TemplateBinding helpers:TextFieldAssist.UnderlineCornerRadius}"
+                                Visibility="{TemplateBinding helpers:TextFieldAssist.DecorationVisibility}" />
                         </Grid>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="CommonStates">
@@ -490,6 +510,7 @@
                         </Trigger>
 
                         <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Underline" Property="Visibility" Value="Collapsed" />
                             <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
                         </Trigger>
 
@@ -516,8 +537,8 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
-        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
-        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalOnly" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="True" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
             <Setter.Value>

@@ -3,7 +3,7 @@
     <Style x:Key="TitlesTextBlock" TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="Margin" Value="{DynamicResource SpacerMargin}" />
-        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontSize" Value="16" />
         <Setter Property="FontWeight" Value="Light" />
         <Setter Property="TextWrapping" Value="NoWrap" />
         <Setter Property="Typography.Capitals" Value="AllPetiteCaps" />
@@ -25,7 +25,7 @@
         x:Key="DescriptionTextBlock"
         BasedOn="{StaticResource TitlesTextBlock}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="TextWrapping" Value="WrapWithOverflow" />
         <Setter Property="TextTrimming" Value="WordEllipsis" />

@@ -34,7 +34,7 @@
                 ItemsSource="{Binding navItems}"
                 SelectedValue="{Binding NavItem}"
                 SelectedValuePath="Value"
-                Style="{DynamicResource ListBoxStyle}">
+                Style="{DynamicResource NavigationPrimaryListBox}">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Rows="1" />

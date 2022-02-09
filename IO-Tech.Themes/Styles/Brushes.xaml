@@ -4,11 +4,11 @@
     <!--  Layout Colors  -->
     <Color x:Key="BaseColor">#171819</Color>
     <Color x:Key="MainColor">#2d3134</Color>
-    <Color x:Key="DividerColor">#41454a</Color>
+    <Color x:Key="DividerColor">#dadedd</Color>
 
     <!--  Text Colors  -->
-    <Color x:Key="PrimaryTextColor">#dadedd</Color>
-    <Color x:Key="SecondaryTextColor">#dadedd</Color>
+    <Color x:Key="PrimaryTextColor">#fafafa</Color>
+    <Color x:Key="SecondaryTextColor">#88dadedd</Color>
 
     <!--  Selection Colors  -->
     <Color x:Key="SelectionBgColor">#344151</Color>

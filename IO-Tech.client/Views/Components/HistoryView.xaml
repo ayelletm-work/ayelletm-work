@@ -38,10 +38,9 @@
                         </Grid.RowDefinitions>
                         <customPackIcon:PackIcon
                             x:Name="PackIcon_Part"
-                            Width="40"
-                            Height="40"
+                            Grid.RowSpan="3"
                             Margin="{DynamicResource SpacerMargin}"
-                            VerticalAlignment="Center" />
+                            VerticalAlignment="Top" />
                         <TextBlock
                             Grid.Column="2"
                             Style="{DynamicResource HeaderTextBlock}"
