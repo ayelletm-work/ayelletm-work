@@ -1,4 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="DefaultFont">Poppins</FontFamily>
     <GridLength x:Key="SpacerGridLength">6</GridLength>
     <Thickness x:Key="SpacerMargin">6</Thickness>
 </ResourceDictionary>

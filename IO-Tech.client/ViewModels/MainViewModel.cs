@@ -6,15 +6,7 @@ using System.Threading.Tasks;
 
 namespace IO_Tech.client.ViewModels
 {
-    public enum NavItemType
-    {
-        Dashboard,
-        JobQueue,
-        Operational,
-        Calibration,
-        Log,
-    }
-   public class MainViewModel
+    public class MainViewModel
     {
     }
 }

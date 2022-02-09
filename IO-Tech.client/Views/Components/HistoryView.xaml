@@ -1,0 +1,78 @@
+﻿<UserControl
+    x:Class="IO_Tech.client.Views.Components.HistoryView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:customPackIcon="clr-namespace:IO_Tech.Themes.CustomControls.CustomPackIcon;assembly=IO-Tech.Themes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:IO_Tech.client.Helpers"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:IO_Tech.client.ViewModels"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewModels:HistoryViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="{DynamicResource SpacerGridLength}" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Background="{DynamicResource SectionBackground}">
+            <TextBlock Style="{DynamicResource TitlesTextBlock}" Text="HISTORY" />
+        </Border>
+        <ListBox
+            Grid.Row="2"
+            ItemsSource="{Binding HistoryItems}"
+            Style="{DynamicResource ListBoxStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <customPackIcon:PackIcon
+                            x:Name="PackIcon_Part"
+                            Width="40"
+                            Height="40"
+                            Margin="{DynamicResource SpacerMargin}"
+                            VerticalAlignment="Center" />
+                        <TextBlock
+                            Grid.Column="2"
+                            Style="{DynamicResource HeaderTextBlock}"
+                            Text="{Binding Name}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Width="300"
+                            Style="{DynamicResource DescriptionTextBlock}"
+                            Text="{Binding Description}" />
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Info}">
+                            <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource AccentBrush}" />
+                            <Setter TargetName="PackIcon_Part" Property="Kind" Value="InfoCircleOutline" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Warning}">
+                            <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource YellowBrush}" />
+                            <Setter TargetName="PackIcon_Part" Property="Kind" Value="WarningOutline" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Error}">
+                            <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource RedBrush}" />
+                            <Setter TargetName="PackIcon_Part" Property="Kind" Value="ErrorOutline" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Neutral}">
+                            <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource NeutralBrush}" />
+                            <Setter TargetName="PackIcon_Part" Property="Kind" Value="InfoCircleOutline" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

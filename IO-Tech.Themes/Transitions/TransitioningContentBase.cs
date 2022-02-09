@@ -6,8 +6,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using IO_Tech.Themes.Transitions;
 
-namespace IO_Tech.Themes.Transitions
+namespace MaterialDesignThemes.Wpf.Transitions
 {
     public class TransitioningContentBase : ContentControl, ITransitionEffectSubject
     {
@@ -112,14 +113,13 @@ namespace IO_Tech.Themes.Transitions
             }
 
             var storyboard = new Storyboard();
-            Timeline? openingEffect = OpeningEffect?.Build(this);
+            var openingEffect = OpeningEffect?.Build(this);
             if (openingEffect != null)
                 storyboard.Children.Add(openingEffect);
-            foreach (var effect in OpeningEffects.Select(e => e.Build(this))
-                .Where(static tl => tl is not null))
-            {
-                storyboard.Children.Add(effect);
-            }
+            //foreach (var effect in OpeningEffects.Select(e => e.Build(this)).Where(static tl => tl != null))
+            //{
+            //    storyboard.Children.Add(effect);
+            //}
 
             storyboard.Begin(GetNameScopeRoot());
         }

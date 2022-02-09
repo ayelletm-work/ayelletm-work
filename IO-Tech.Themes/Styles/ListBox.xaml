@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:conv="clr-namespace:IO_Tech.Themes.Converters"
     xmlns:customCard="clr-namespace:IO_Tech.Themes.CustomControls.CustomCard"
+    xmlns:customPackIcon="clr-namespace:IO_Tech.Themes.CustomControls.CustomPackIcon"
     xmlns:helpers="clr-namespace:IO_Tech.Themes.Helpers"
     xmlns:wpf="clr-namespace:IO_Tech.Themes.CustomControls.CustomRipple.MaterialDesignThemes.Wpf">
 
@@ -196,7 +197,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBox}">
                     <ControlTemplate.Resources>
-                        <Style TargetType="{x:Type helpers:PackIcon}">
+                        <Style TargetType="{x:Type customPackIcon:PackIcon}">
                             <Setter Property="FrameworkElement.Width" Value="22" />
                             <Setter Property="FrameworkElement.Height" Value="22" />
                         </Style>
@@ -252,11 +253,14 @@
     </Style>
 
     <Style x:Key="ListBoxItem" TargetType="{x:Type ListBoxItem}">
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="{DynamicResource SectionBackground}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="Padding" Value="18,6" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
-        <Setter Property="Padding" Value="8" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="helpers:ListBoxItemAssist.ShowSelection" Value="{Binding Path=(helpers:ListBoxItemAssist.ShowSelection), RelativeSource={RelativeSource AncestorType=ListBox}}" />
         <Setter Property="Template">
@@ -610,7 +614,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBox}">
                     <ControlTemplate.Resources>
-                        <Style TargetType="{x:Type helpers:PackIcon}">
+                        <Style TargetType="{x:Type customPackIcon:PackIcon}">
                             <Setter Property="FrameworkElement.Width" Value="22" />
                             <Setter Property="FrameworkElement.Height" Value="22" />
                         </Style>

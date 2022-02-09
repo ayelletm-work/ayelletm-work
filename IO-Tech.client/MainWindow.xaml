@@ -14,6 +14,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomWindow/ModernWindow.xaml" />
+                <ResourceDictionary Source="/IO-Tech.client;component/Resources/DataTemplates.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </customWindow:ModernWindow.Resources>
@@ -24,6 +25,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <views:HeaderView />
-        <ContentControl Grid.Column="1" ContentTemplate="{DynamicResource Dash}"/>
+        <ContentControl
+            Grid.Row="2"
+            Content="{Binding}"
+            ContentTemplate="{DynamicResource DashboardViewDataTemplate}" />
     </Grid>
 </customWindow:ModernWindow>

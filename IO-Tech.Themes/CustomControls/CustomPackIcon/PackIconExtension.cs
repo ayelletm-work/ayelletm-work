@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Markup;
 
-namespace IO_Tech.Themes.Helpers
+namespace IO_Tech.Themes.CustomControls.CustomPackIcon
 {
     [MarkupExtensionReturnType(typeof(PackIcon))]
     public class PackIconExtension : MarkupExtension

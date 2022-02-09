@@ -16,21 +16,24 @@ namespace IO_Tech.Themes.CustomControls.CustomUnderline
 
         static Underline()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(Underline), new FrameworkPropertyMetadata(typeof(Underline)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(Underline),
+                new FrameworkPropertyMetadata(typeof(Underline)));
         }
 
         public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register(
             nameof(IsActive), typeof(bool), typeof(Underline),
-            new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender, IsActivePropertyChangedCallback));
+            new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.AffectsRender,
+                IsActivePropertyChangedCallback));
 
-        private static void IsActivePropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
+        private static void IsActivePropertyChangedCallback(DependencyObject dependencyObject,
+            DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
         {
-            ((Underline)dependencyObject).GotoVisualState(!TransitionAssist.GetDisableTransitions(dependencyObject));
+            ((Underline) dependencyObject).GotoVisualState(!TransitionAssist.GetDisableTransitions(dependencyObject));
         }
 
         public bool IsActive
         {
-            get => (bool)GetValue(IsActiveProperty);
+            get => (bool) GetValue(IsActiveProperty);
             set => SetValue(IsActiveProperty, value);
         }
 
@@ -40,7 +43,7 @@ namespace IO_Tech.Themes.CustomControls.CustomUnderline
 
         public CornerRadius CornerRadius
         {
-            get => (CornerRadius)GetValue(CornerRadiusProperty);
+            get => (CornerRadius) GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
         }
 
@@ -57,3 +60,4 @@ namespace IO_Tech.Themes.CustomControls.CustomUnderline
         private string SelectStateName()
             => IsActive ? ActiveStateName : InactiveStateName;
     }
+}

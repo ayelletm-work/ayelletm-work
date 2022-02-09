@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Media;
+using IO_Tech.Themes.CustomControls.CustomPackIcon;
 
 namespace IO_Tech.Themes.Helpers
 {
@@ -422,21 +423,8 @@ namespace IO_Tech.Themes.Helpers
             DependencyObject dependencyObject,
             DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
         {
-            if (dependencyObject is not Control box)
-            {
-                return;
-            }
+          
 
-            if (box.IsLoaded)
-            {
-                ApplyTextBoxViewMargin(box, (Thickness)dependencyPropertyChangedEventArgs.NewValue);
-            }
-
-            box.Loaded += (sender, args) =>
-            {
-                var textBox = (Control)sender;
-                ApplyTextBoxViewMargin(textBox, GetTextBoxViewMargin(textBox));
-            };
         }
 
         #endregion

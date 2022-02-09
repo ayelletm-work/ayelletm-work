@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace IO_Tech.Themes.Helpers
+namespace IO_Tech.Themes.CustomControls.CustomPackIcon
 {
     public class PackIcon : Control
     {

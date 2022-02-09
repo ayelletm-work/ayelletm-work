@@ -1,4 +1,4 @@
-namespace IO_Tech.Themes.Helpers
+namespace IO_Tech.Themes.CustomControls.CustomPackIcon
 {
     /// ******************************************
     /// This code is auto generated. Do not amend.

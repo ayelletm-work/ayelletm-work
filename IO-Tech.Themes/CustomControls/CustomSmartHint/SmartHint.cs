@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls; 
+using System.Windows.Controls;
+using IO_Tech.Themes.Helpers;
 
 namespace IO_Tech.Themes.CustomControls.CustomSmartHint
 {

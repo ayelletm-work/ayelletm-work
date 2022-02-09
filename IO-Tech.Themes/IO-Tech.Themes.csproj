@@ -60,6 +60,8 @@
     <Compile Include="Converters\BorderClipConverter.cs" />
     <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Converters\EqualityToVisibilityConverter.cs" />
+    <Compile Include="Converters\ToUpperConverter.cs" />
+    <Compile Include="CustomControls\CustomCard\Card.cs" />
     <Compile Include="CustomControls\CustomRipple\Ripple.cs" />
     <Compile Include="CustomControls\CustomUnderline\Underline.cs" />
     <Compile Include="CustomControls\CustomWindow\ModernWindow.cs" />
@@ -73,20 +75,21 @@
     <Compile Include="Helpers\IHintProxy.cs" />
     <Compile Include="Helpers\ListBoxAssist.cs" />
     <Compile Include="Helpers\ListBoxItemAssist.cs" />
-    <Compile Include="Helpers\PackIcon.cs" />
-    <Compile Include="Helpers\PackIconDataFactory.cs" />
-    <Compile Include="Helpers\PackIconExtension.cs" />
-    <Compile Include="Helpers\PackIconKind.cs" />
+    <Compile Include="CustomControls\CustomPackIcon\PackIcon.cs" />
+    <Compile Include="CustomControls\CustomPackIcon\PackIconDataFactory.cs" />
+    <Compile Include="CustomControls\CustomPackIcon\PackIconExtension.cs" />
+    <Compile Include="CustomControls\CustomPackIcon\PackIconKind.cs" />
     <Compile Include="Helpers\ScrollbarAssist.cs" />
     <Compile Include="Helpers\ScrollViewerAssist.cs" />
     <Compile Include="Helpers\ShadowAssist.cs" />
-    <Compile Include="Helpers\SmartHint.cs" />
+    <Compile Include="CustomControls\CustomSmartHint\SmartHint.cs" />
+    <Compile Include="Helpers\Spelling.cs" />
     <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Helpers\TextBlockAssist.cs" />
     <Compile Include="Helpers\TextFieldAssist.cs" />
     <Compile Include="Helpers\ToolTipAssist.cs" />
+    <Compile Include="Helpers\TransitionAssist.cs" />
     <Compile Include="Helpers\UIElementExtensions.cs" />
-    <Compile Include="Helpers\Underline.cs" />
     <Compile Include="Helpers\ValidationAssist.cs" />
     <Compile Include="Presentation\CommandBase.cs" />
     <Compile Include="Presentation\Displayable.cs" />
@@ -107,6 +110,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Transitions\CircleWipe.cs" />
+    <Compile Include="Transitions\FadeWipe.cs" />
+    <Compile Include="Transitions\IndexedItemOffsetMultiplierExtension.cs" />
+    <Compile Include="Transitions\ITransitionEffect.cs" />
+    <Compile Include="Transitions\ITransitionEffectSubject.cs" />
+    <Compile Include="Transitions\ITransitionWipe.cs" />
+    <Compile Include="Transitions\IZIndexController.cs" />
+    <Compile Include="Transitions\SlideDirection.cs" />
+    <Compile Include="Transitions\SlideOutWipe.cs" />
+    <Compile Include="Transitions\SlideWipe.cs" />
+    <Compile Include="Transitions\TransitionEffect.cs" />
+    <Compile Include="Transitions\TransitionEffectBase.cs" />
+    <Compile Include="Transitions\TransitionEffectExtension.cs" />
+    <Compile Include="Transitions\TransitionEffectKind.cs" />
+    <Compile Include="Transitions\TransitionEffectTypeConverter.cs" />
+    <Compile Include="Transitions\Transitioner.cs" />
+    <Compile Include="Transitions\TransitionerSlide.cs" />
+    <Compile Include="Transitions\TransitionerSlideState.cs" />
+    <Compile Include="Transitions\TransitioningContent.cs" />
+    <Compile Include="Transitions\TransitioningContentBase.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -149,9 +172,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\TextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustomControls\CustomPackIcon\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

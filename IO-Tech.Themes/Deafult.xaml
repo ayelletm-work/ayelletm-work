@@ -3,5 +3,8 @@
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Brushes.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Assets.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Decoration.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/TextBlock.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ScrollViewer.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ListBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

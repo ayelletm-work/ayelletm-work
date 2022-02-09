@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace IO_Tech.Themes.Transitions
+namespace MaterialDesignThemes.Wpf.Transitions
 {
     [Flags]
     public enum TransitioningContentRunHint
