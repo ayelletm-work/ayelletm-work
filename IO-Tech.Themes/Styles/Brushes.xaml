@@ -4,7 +4,7 @@
     <!--  Layout Colors  -->
     <Color x:Key="BaseColor">#171819</Color>
     <Color x:Key="MainColor">#2d3134</Color>
-    <Color x:Key="BorderColor">#41454a</Color>
+    <Color x:Key="DividerColor">#41454a</Color>
 
     <!--  Text Colors  -->
     <Color x:Key="PrimaryTextColor">#dadedd</Color>
@@ -26,11 +26,19 @@
 
     <SolidColorBrush x:Key="WindowBackground" Color="{StaticResource BaseColor}" />
     <SolidColorBrush x:Key="SectionBackground" Color="{StaticResource MainColor}" />
+    <SolidColorBrush x:Key="DividerBackground" Color="{StaticResource DividerColor}" />
 
     <SolidColorBrush x:Key="PrimaryForeground" Color="{StaticResource AccentColor}" />
     <SolidColorBrush x:Key="SecondaryForeground" Color="{StaticResource AccentColor}" />
 
+    <SolidColorBrush x:Key="SelectionBgBrush" Color="{StaticResource SelectionBgColor}" />
+    <SolidColorBrush x:Key="SelectionBorderBrush" Color="{StaticResource SelectionBorderColor}" />
+
     <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="YellowBrush" Color="{StaticResource YellowColor}" />
+    <SolidColorBrush x:Key="RedBrush" Color="{StaticResource RedColor}" />
+    <SolidColorBrush x:Key="GreenBrush" Color="{StaticResource GreenColor}" />
+    <SolidColorBrush x:Key="NeutralBrush" Color="{StaticResource NeutralColor}" />
 
     <DrawingBrush x:Key="LogoDrawingBrush" Stretch="Uniform">
         <DrawingBrush.Drawing>

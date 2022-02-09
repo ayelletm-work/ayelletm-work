@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Controls;
+using IO_Tech.Themes.CustomControls.CustomSmartHint;
 
-namespace MaterialDesignThemes.Wpf
+namespace IO_Tech.Themes.Helpers
 {
     /// <summary>
     /// This interface is the adapter from UiControl (like <see cref="TextBox"/>, <see cref="ComboBox"/> and others) to <see cref="SmartHint"/>

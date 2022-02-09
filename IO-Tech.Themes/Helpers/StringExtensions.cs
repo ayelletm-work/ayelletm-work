@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 
-namespace MaterialDesignThemes.Wpf
+namespace IO_Tech.Themes.Helpers
 {
     internal static class StringExtensions
     {

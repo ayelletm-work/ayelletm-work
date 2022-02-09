@@ -1,4 +1,4 @@
-namespace MaterialDesignThemes.Wpf
+namespace IO_Tech.Themes.Helpers
 {
     /// ******************************************
     /// This code is auto generated. Do not amend.

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MaterialDesignThemes.Wpf
+namespace IO_Tech.Themes.Helpers
 {
     public static class ListBoxItemAssist
     {

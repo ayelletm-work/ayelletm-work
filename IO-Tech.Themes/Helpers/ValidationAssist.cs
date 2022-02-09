@@ -2,7 +2,7 @@
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
-namespace MaterialDesignThemes.Wpf
+namespace IO_Tech.Themes.Helpers
 {
     public static class ValidationAssist
     {

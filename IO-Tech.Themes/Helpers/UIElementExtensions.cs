@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 
-namespace MaterialDesignThemes.Wpf
+namespace IO_Tech.Themes.Helpers
 {
     /// <summary>
     /// This is a simple utility to add and remove a single adorner to an element

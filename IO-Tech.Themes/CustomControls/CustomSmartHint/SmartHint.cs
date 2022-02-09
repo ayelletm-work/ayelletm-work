@@ -1,10 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
-using MaterialDesignThemes.Wpf.Converters;
+using System.Windows.Controls; 
 
-namespace MaterialDesignThemes.Wpf
+namespace IO_Tech.Themes.CustomControls.CustomSmartHint
 {
 
     /// <summary>
