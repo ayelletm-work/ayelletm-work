@@ -254,7 +254,7 @@
 
     <Style x:Key="ListBoxItem" TargetType="{x:Type ListBoxItem}">
         <Setter Property="Background" Value="{DynamicResource SectionBackground}" />
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="0 1" />
         <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
         <Setter Property="Padding" Value="18,6" />
         <Setter Property="FontSize" Value="18" />
