@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -55,6 +57,20 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\BorderClipConverter.cs" />
+    <Compile Include="Converters\BrushRoundConverter.cs" />
+    <Compile Include="Converters\EqualityToVisibilityConverter.cs" />
+    <Compile Include="CustomControls\CustomRipple\Ripple.cs" />
+    <Compile Include="CustomControls\CustomUnderline\Underline.cs" />
+    <Compile Include="CustomControls\CustomWindow\ModernWindow.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Helpers\ListBoxAssist.cs" />
+    <Compile Include="Presentation\CommandBase.cs" />
+    <Compile Include="Presentation\Displayable.cs" />
+    <Compile Include="Presentation\FontSize.cs" />
+    <Compile Include="Presentation\Link.cs" />
+    <Compile Include="Presentation\NotifyPropertyChanged.cs" />
+    <Compile Include="Presentation\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,10 +94,41 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Styels\Brushes.xaml">
+    <Page Include="CustomControls\CustomRipple\Ripple.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CustomControls\CustomUnderline\Underline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\CustomWindow\ModernWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Deafult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Assets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Decoration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomControls\CustomPackIcon\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

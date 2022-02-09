@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IO_Tech.client
+namespace IO_Tech.client.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LogView.xaml
     /// </summary>
-    public partial class MainWindow  
+    public partial class LogView : UserControl
     {
-        public MainWindow()
+        public LogView()
         {
             InitializeComponent();
         }

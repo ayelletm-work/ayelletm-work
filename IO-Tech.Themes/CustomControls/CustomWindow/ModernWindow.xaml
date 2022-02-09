@@ -1,0 +1,43 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:IO_Tech.Themes.CustomControls.CustomWindow">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <!--  empty window style, no backbutton, menu and title links  -->
+    <Style x:Key="ShellWindowStyle" TargetType="local:ModernWindow">
+        <Setter Property="WindowState" Value="Maximized" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="IsTitleVisible" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ModernWindow">
+                    <Border Background="{DynamicResource WindowBackground}">
+                        <AdornerDecorator>
+
+                            <!--  window content  -->
+                            <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}" />
+
+
+                        </AdornerDecorator>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CornerRadius="0"
+                    GlassFrameThickness="1"
+                    NonClientFrameEdges="None"
+                    UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+</ResourceDictionary>
