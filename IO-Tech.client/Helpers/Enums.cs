@@ -38,4 +38,14 @@ namespace IO_Tech.client.Helpers
         [Description("neutral")]
         neutral
     }
+    public enum PrintStatusType
+    {
+        [Description("Critical")]
+        Critical,
+        [Description("Warning")]
+        Warning,
+        [Description("Done")]
+        Done,
+       
+    }
 }

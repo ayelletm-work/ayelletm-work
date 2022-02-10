@@ -8,14 +8,17 @@ using IO_Tech.Themes.CustomControls.CustomPackIcon;
 
 namespace IO_Tech.client.Models
 {
-   public class HistoryItem
+   public class AlertItem
     {
         public string Name { get; set; }
 
         public string Description { get; set; }
-        
+
         public PackIconKind Icon { get; set; }
 
-        public SeverityType SeverityType { get; set; }
+        public PrintStatusType PrintStatusType { get; set; }
+      
+        public string TimeStamp { get; set; }
+
     }
 }

@@ -62,7 +62,9 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\EnumsListItem.cs" />
     <Compile Include="Helpers\EnumListItemCollection.cs" />
+    <Compile Include="Models\AlertItem.cs" />
     <Compile Include="Models\HistoryItem.cs" />
+    <Compile Include="ViewModels\AlertsViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -70,6 +72,9 @@
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\CalibrationView.xaml.cs">
       <DependentUpon>CalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\AlertsView.xaml.cs">
+      <DependentUpon>AlertsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
@@ -112,6 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\AlertsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
