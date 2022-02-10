@@ -7,9 +7,10 @@
     xmlns:helpers="clr-namespace:IO_Tech.client.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:IO_Tech.client.ViewModels"
+    xmlns:components="clr-namespace:IO_Tech.client.ViewModels.Components"
     mc:Ignorable="d">
     <UserControl.DataContext>
-        <viewModels:HistoryViewModel />
+        <components:HistoryViewModel />
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -53,7 +54,7 @@
                             <TextBlock
                                 Grid.Row="1"
                                 Grid.Column="2"
-                                Width="300"
+                                Width="280"
                                 Style="{DynamicResource DescriptionTextBlock}"
                                 Text="{Binding Description}" />
                         </Grid>

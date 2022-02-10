@@ -64,9 +64,9 @@
     <Compile Include="Helpers\EnumListItemCollection.cs" />
     <Compile Include="Models\AlertItem.cs" />
     <Compile Include="Models\HistoryItem.cs" />
-    <Compile Include="ViewModels\AlertsViewModel.cs" />
+    <Compile Include="ViewModels\Components\AlertsViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
-    <Compile Include="ViewModels\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\Components\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Helpers\Enums.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />

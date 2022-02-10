@@ -3,75 +3,83 @@ using IO_Tech.client.Helpers;
 using IO_Tech.client.Models;
 using IO_Tech.Themes.CustomControls.CustomPackIcon;
 
-namespace IO_Tech.client.ViewModels
+namespace IO_Tech.client.ViewModels.Components
 {
-    public class HistoryViewModel : ViewModelBase
+   public class AlertsViewModel : ViewModelBase
     {
-        public ObservableCollection<HistoryItem> HistoryItems { get; set; } = new ObservableCollection<HistoryItem>
+        public ObservableCollection<AlertItem> AlertItems { get; set; } = new ObservableCollection<AlertItem>
         {
-            new HistoryItem
+            new AlertItem
             {
                 Name = "Printing",
                 Description =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Info,
-                Icon = PackIconKind.InfoCircleOutline,
+                PrintStatusType = PrintStatusType.Done,
+                Icon = PackIconKind.CheckCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
             },
-            new HistoryItem
+            new AlertItem
             {
                 Name = "Printing",
                 Description =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Info,
-                Icon = PackIconKind.InfoCircleOutline,
+                PrintStatusType = PrintStatusType.Done,
+                Icon = PackIconKind.CheckCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
             },
-            new HistoryItem
+            new AlertItem
             {
                 Name = "Printing",
                 Description =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Warning,
+                PrintStatusType = PrintStatusType.Warning,
                 Icon = PackIconKind.AlertCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
             },
-            new HistoryItem
+            new AlertItem
             {
                 Name = "Printing",
                 Description =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Neutral,
-                Icon = PackIconKind.CogOutline,
-            },
-            new HistoryItem
-            {
-                Name = "Printing",
-                Description =
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Error,
+                PrintStatusType = PrintStatusType.Critical,
                 Icon = PackIconKind.CloseCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
             },
-            new HistoryItem
+            new AlertItem
             {
                 Name = "Printing",
                 Description =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Error,
+                PrintStatusType = PrintStatusType.Critical,
                 Icon = PackIconKind.CloseCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
             },
-            new HistoryItem
+            new AlertItem
             {
                 Name = "Printing",
                 Description =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Warning,
+                PrintStatusType = PrintStatusType.Critical,
+                Icon = PackIconKind.CloseCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
+            },
+            new AlertItem
+            {
+                Name = "Printing",
+                Description =
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+                PrintStatusType = PrintStatusType.Warning,
                 Icon = PackIconKind.AlertCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
             },
-            new HistoryItem
+            new AlertItem
             {
                 Name = "Printing",
                 Description =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-                SeverityType = SeverityType.Neutral,
-                Icon = PackIconKind.CogOutline,
+                PrintStatusType = PrintStatusType.Done,
+                Icon = PackIconKind.CheckCircleOutline,
+                TimeStamp = "08:24 am ,Dec 12",
             }
         };
 

@@ -8,9 +8,10 @@
     xmlns:local="clr-namespace:IO_Tech.client.Views.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:IO_Tech.client.ViewModels"
+    xmlns:components="clr-namespace:IO_Tech.client.ViewModels.Components"
     mc:Ignorable="d">
     <UserControl.DataContext>
-        <viewModels:AlertsViewModel />
+        <components:AlertsViewModel />
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -57,7 +58,7 @@
                             <TextBlock
                                 Grid.Row="1"
                                 Grid.Column="2"
-                                Width="300"
+                                Width="290"
                                 Style="{DynamicResource AlertsDescriptionTextBlock}"
                                 Text="{Binding Description}" />
                             <TextBlock
