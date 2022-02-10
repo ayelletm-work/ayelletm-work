@@ -65,6 +65,7 @@
     <Compile Include="Models\AlertItem.cs" />
     <Compile Include="Models\HistoryItem.cs" />
     <Compile Include="ViewModels\Components\AlertsViewModel.cs" />
+    <Compile Include="ViewModels\Components\ReadyForPrintViewModel.cs" />
     <Compile Include="ViewModels\Components\StatusSummeryViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\Components\HistoryViewModel.cs" />
@@ -82,6 +83,9 @@
     </Compile>
     <Compile Include="Views\Components\MachineStatusView.xaml.cs">
       <DependentUpon>MachineStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\ReadyForPrintView.xaml.cs">
+      <DependentUpon>ReadyForPrintView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\StatusSummeryView.xaml.cs">
       <DependentUpon>StatusSummeryView.xaml</DependentUpon>
@@ -133,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Components\MachineStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\ReadyForPrintView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -62,6 +62,7 @@
     <Compile Include="Converters\EqualityToVisibilityConverter.cs" />
     <Compile Include="Converters\ToUpperConverter.cs" />
     <Compile Include="CustomControls\CustomCard\Card.cs" />
+    <Compile Include="CustomControls\CustomListSortDirectionIndicator\ListSortDirectionIndicator.cs" />
     <Compile Include="CustomControls\CustomRipple\Ripple.cs" />
     <Compile Include="CustomControls\CustomUnderline\Underline.cs" />
     <Compile Include="CustomControls\CustomWindow\ModernWindow.cs" />
@@ -140,6 +141,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CustomControls\CustomListSortDirectionIndicator\ListSortDirectionIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomControls\CustomPackIcon\PackIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
