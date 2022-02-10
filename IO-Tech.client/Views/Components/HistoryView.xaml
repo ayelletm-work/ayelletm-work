@@ -26,47 +26,57 @@
             Style="{DynamicResource ListBoxStyle}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <customPackIcon:PackIcon
-                            x:Name="PackIcon_Part"
-                            Grid.RowSpan="3"
-                            Margin="{DynamicResource SpacerMargin}"
-                            VerticalAlignment="Top" />
-                        <TextBlock
-                            Grid.Column="2"
-                            Style="{DynamicResource HeaderTextBlock}"
-                            Text="{Binding Name}" />
-                        <TextBlock
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            Width="300"
-                            Style="{DynamicResource DescriptionTextBlock}"
-                            Text="{Binding Description}" />
-                    </Grid>
+                    <Border
+                        x:Name="Border_Part"
+                        Padding="{DynamicResource SpacerMargin}"
+                        BorderThickness="{DynamicResource ListBorderIndicatorMargin}">
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <customPackIcon:PackIcon
+                                x:Name="PackIcon_Part"
+                                Grid.RowSpan="3"
+                                Margin="{DynamicResource SpacerMargin}"
+                                VerticalAlignment="Top" />
+                            <TextBlock
+                                Grid.Column="2"
+                                Style="{DynamicResource HeaderTextBlock}"
+                                Text="{Binding Name}" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Width="300"
+                                Style="{DynamicResource DescriptionTextBlock}"
+                                Text="{Binding Description}" />
+                        </Grid>
+                    </Border>
                     <DataTemplate.Triggers>
                         <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Info}">
                             <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource AccentBrush}" />
+                            <Setter TargetName="Border_Part" Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
                             <Setter TargetName="PackIcon_Part" Property="Kind" Value="InfoCircleOutline" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Warning}">
                             <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource YellowBrush}" />
+                            <Setter TargetName="Border_Part" Property="BorderBrush" Value="{DynamicResource YellowBrush}" />
                             <Setter TargetName="PackIcon_Part" Property="Kind" Value="WarningOutline" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Error}">
                             <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource RedBrush}" />
+                            <Setter TargetName="Border_Part" Property="BorderBrush" Value="{DynamicResource RedBrush}" />
                             <Setter TargetName="PackIcon_Part" Property="Kind" Value="ErrorOutline" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Path=SeverityType}" Value="{x:Static helpers:SeverityType.Neutral}">
                             <Setter TargetName="PackIcon_Part" Property="Foreground" Value="{DynamicResource NeutralBrush}" />
+                            <Setter TargetName="Border_Part" Property="BorderBrush" Value="{DynamicResource NeutralBrush}" />
                             <Setter TargetName="PackIcon_Part" Property="Kind" Value="InfoCircleOutline" />
                         </DataTrigger>
                     </DataTemplate.Triggers>

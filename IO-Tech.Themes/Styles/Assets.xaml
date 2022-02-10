@@ -3,4 +3,5 @@
     <FontFamily x:Key="DefaultFont">Poppins</FontFamily>
     <GridLength x:Key="SpacerGridLength">6</GridLength>
     <Thickness x:Key="SpacerMargin">6</Thickness>
+    <Thickness x:Key="ListBorderIndicatorMargin">6 0 0 0</Thickness>
 </ResourceDictionary>
