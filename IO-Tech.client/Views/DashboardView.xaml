@@ -15,7 +15,14 @@
             <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="{DynamicResource SpacerGridLength}" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="{DynamicResource SpacerGridLength}" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="{DynamicResource SpacerGridLength}" />
@@ -27,10 +34,10 @@
             <comp:HistoryView Grid.Row="2" />
             <comp:AlertsView Grid.Row="4" />
         </Grid>
-        <DockPanel Grid.Column="2">
-            <Border Background="{DynamicResource SectionBackground}" DockPanel.Dock="Top" />
-            <Border />
-        </DockPanel>
-        <local:CurrentPrintControllerView Grid.Column="4" />
+
+        <comp:StatusSummeryView Grid.Column="2" />
+
+
+        <local:CurrentPrintControllerView Grid.RowSpan="5" Grid.Column="4" />
     </Grid>
 </UserControl>
