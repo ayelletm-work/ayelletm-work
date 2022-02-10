@@ -65,7 +65,9 @@
     <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Converters\DoubleToThicknessConverter.cs" />
     <Compile Include="Converters\EqualityToVisibilityConverter.cs" />
+    <Compile Include="Converters\FloatingHintOffsetCalculationConverter.cs" />
     <Compile Include="Converters\GridLinesVisibilityBorderToThicknessConverter.cs" />
+    <Compile Include="Converters\HintProxyFabricConverter.cs" />
     <Compile Include="Converters\MathConverter.cs" />
     <Compile Include="Converters\MathMultipleConverter.cs" />
     <Compile Include="Converters\MathOperation.cs" />
@@ -77,13 +79,19 @@
     <Compile Include="Converters\ShadowConverter.cs" />
     <Compile Include="Converters\ShadowEdgeConverter.cs" />
     <Compile Include="Converters\ShadowInfo.cs" />
+    <Compile Include="Converters\TextFieldClearButtonVisibilityConverter.cs" />
+    <Compile Include="Converters\TextFieldPrefixTextVisibilityConverter.cs" />
     <Compile Include="Converters\TopThicknessConverter.cs" />
     <Compile Include="Converters\ToUpperConverter.cs" />
     <Compile Include="CustomControls\CustomCard\Card.cs" />
     <Compile Include="CustomControls\CustomListSortDirectionIndicator\ListSortDirectionIndicator.cs" />
+    <Compile Include="CustomControls\CustomPopupEx\PopupEx.cs" />
     <Compile Include="CustomControls\CustomRipple\Ripple.cs" />
     <Compile Include="CustomControls\CustomUnderline\Underline.cs" />
     <Compile Include="CustomControls\CustomWindow\ModernWindow.cs" />
+    <Compile Include="Helpers\BottomDashedLineAdorner.cs" />
+    <Compile Include="Helpers\ClearText.cs" />
+    <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\HintAssist.cs" />
     <Compile Include="Helpers\HintProxyFabric.ComboBox.cs" />
@@ -216,6 +224,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Thumb.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -64,6 +64,7 @@
     <Compile Include="Helpers\EnumListItemCollection.cs" />
     <Compile Include="Models\AlertItem.cs" />
     <Compile Include="Models\HistoryItem.cs" />
+    <Compile Include="Models\JobItem.cs" />
     <Compile Include="ViewModels\Components\AlertsViewModel.cs" />
     <Compile Include="ViewModels\Components\ReadyForPrintViewModel.cs" />
     <Compile Include="ViewModels\Components\StatusSummeryViewModel.cs" />
