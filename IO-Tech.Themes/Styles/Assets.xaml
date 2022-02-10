@@ -1,7 +1,19 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <FontFamily x:Key="DefaultFont">Poppins</FontFamily>
     <GridLength x:Key="SpacerGridLength">6</GridLength>
     <Thickness x:Key="SpacerMargin">6</Thickness>
+
     <Thickness x:Key="ListBorderIndicatorMargin">6 0 0 0</Thickness>
+
+    <system:Double x:Key="SummaryValueFontSize">26</system:Double>
+    <system:Double x:Key="TimeStampFontSize">12</system:Double>
+    <system:Double x:Key="TextFontSize">14</system:Double>
+    <system:Double x:Key="HeaderFontSize">16</system:Double>
+    <system:Double x:Key="TitleFontSize">16</system:Double>
+
+    <system:Double x:Key="IconSize">20</system:Double>
 </ResourceDictionary>

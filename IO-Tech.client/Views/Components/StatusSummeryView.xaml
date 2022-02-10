@@ -12,9 +12,104 @@
     <UserControl.DataContext>
         <components:StatusSummeryViewModel />
     </UserControl.DataContext>
-    <Border Background="{DynamicResource SectionBackground}" >
-<Grid>
-    <TextBlock></TextBlock>
-</Grid>
+    <Border Background="{DynamicResource SectionBackground}">
+        <Grid Margin="{DynamicResource SpacerMargin}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" /> 
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.ColumnSpan="9"
+                Style="{DynamicResource TitlesTextBlock}"
+                Text="OVERVIEW" />
+            <TextBlock
+                Grid.Row="1"
+                Foreground="{DynamicResource GreenBrush}"
+                Style="{DynamicResource SummaryTextBlock}">
+                <Run
+                    FontSize="{DynamicResource SummaryValueFontSize}"
+                    FontWeight="SemiBold"
+                    Text="44" />
+                <LineBreak />
+                <Run Text="Ready" />
+            </TextBlock>
+            <Border
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{DynamicResource VerticalSeparatorBorderStyle}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="2"
+                Foreground="{DynamicResource YellowBrush}"
+                Style="{DynamicResource SummaryTextBlock}">
+                <Run
+                    FontSize="{DynamicResource SummaryValueFontSize}"
+                    FontWeight="SemiBold"
+                    Text="120" />
+                <LineBreak />
+                <Run Text="Ripping" />
+            </TextBlock>
+            <Border
+                Grid.Row="1"
+                Grid.Column="3"
+                Style="{DynamicResource VerticalSeparatorBorderStyle}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="4"
+                Foreground="{DynamicResource RedBrush}"
+                Style="{DynamicResource SummaryTextBlock}">
+                <Run
+                    FontSize="{DynamicResource SummaryValueFontSize}"
+                    FontWeight="SemiBold"
+                    Text="0" />
+                <LineBreak />
+                <Run Text="Error" />
+            </TextBlock>
+            <Border
+                Grid.Row="1"
+                Grid.Column="5"
+                Style="{DynamicResource VerticalSeparatorBorderStyle}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="6"
+                Foreground="{DynamicResource NeutralBrush}"
+                Style="{DynamicResource SummaryTextBlock}">
+                <Run
+                    FontSize="{DynamicResource SummaryValueFontSize}"
+                    FontWeight="SemiBold"
+                    Text="75%" />
+                <LineBreak />
+                <Run Text="Foil stack" />
+            </TextBlock>
+            <Border
+                Grid.Row="1"
+                Grid.Column="7"
+                Style="{DynamicResource VerticalSeparatorBorderStyle}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="8"
+                Foreground="{DynamicResource NeutralBrush}"
+                Style="{DynamicResource SummaryTextBlock}">
+                <Run
+                    FontSize="{DynamicResource SummaryValueFontSize}"
+                    FontWeight="SemiBold"
+                    Text="FOIL" />
+                <LineBreak />
+                <Run Text="Material" />
+            </TextBlock>
+
+
+        </Grid>
     </Border>
 </UserControl>
