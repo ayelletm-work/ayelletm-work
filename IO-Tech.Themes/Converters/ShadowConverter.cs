@@ -2,12 +2,13 @@
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Effects;
+using IO_Tech.Themes.Helpers;
 
 namespace IO_Tech.Themes.Converters
 {
     public class ShadowConverter : IValueConverter
     {
-        public static readonly ShadowConverter Instance = new();
+        public static readonly ShadowConverter Instance = new ShadowConverter();
 
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {

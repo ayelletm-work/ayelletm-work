@@ -22,12 +22,15 @@
         <Border Background="{DynamicResource SectionBackground}">
             <TextBlock Style="{DynamicResource TitlesTextBlock}" Text="READY FOR PRINT" />
         </Border>
-        <DataGrid ItemsSource="{Binding JobItems}">
+        <DataGrid
+            Grid.Row="2"
+            ItemsSource="{Binding JobItems}"
+            Style="{DynamicResource DataGridStyle}">
             <DataGrid.Columns>
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Border BorderThickness="{DynamicResource ListBorderIndicatorMargin}" />
+                            <Border x:Name="Border_Part" BorderThickness="{DynamicResource ListBorderIndicatorMargin}" />
                             <DataTemplate.Triggers>
                                 <DataTrigger Binding="{Binding Path=PrintStatusType}" Value="{x:Static helpers:PrintStatusType.Done}">
                                     <Setter TargetName="Border_Part" Property="BorderBrush" Value="{DynamicResource GreenBrush}" />
@@ -44,9 +47,45 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn
-                    Width="200"
-                    Binding="{Binding isbn}"
-                    Header="isbn" />
+                    Width="Auto"
+                    Binding="{Binding Id}"
+                    Header="ID"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="Auto"
+                    Binding="{Binding Name}"
+                    Header="NAME"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Binding="{Binding Class}"
+                    Header="CLASS"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Binding="{Binding Path}"
+                    Header="PATH"
+                    IsReadOnly="True" />
+                <DataGridTemplateColumn Header="COUNT" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{DynamicResource DescriptionTextBlock}">
+                                <Run Text="{Binding Count, FallbackValue=2}" />
+                                <Run Text="/" />
+                                <Run Text="{Binding TotalCount, FallbackValue=5}" />
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Layer}"
+                    Header="LAYERS"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Tile}"
+                    Header="Tile"
+                    IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

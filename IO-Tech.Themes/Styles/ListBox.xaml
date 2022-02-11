@@ -4,9 +4,9 @@
     xmlns:conv="clr-namespace:IO_Tech.Themes.Converters"
     xmlns:customCard="clr-namespace:IO_Tech.Themes.CustomControls.CustomCard"
     xmlns:customPackIcon="clr-namespace:IO_Tech.Themes.CustomControls.CustomPackIcon"
+    xmlns:customRipple="clr-namespace:IO_Tech.Themes.CustomControls.CustomRipple"
     xmlns:customUnderline="clr-namespace:IO_Tech.Themes.CustomControls.CustomUnderline"
-    xmlns:helpers="clr-namespace:IO_Tech.Themes.Helpers"
-    xmlns:wpf="clr-namespace:IO_Tech.Themes.CustomControls.CustomRipple.MaterialDesignThemes.Wpf">
+    xmlns:helpers="clr-namespace:IO_Tech.Themes.Helpers">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomRipple/Ripple.xaml" />
@@ -62,7 +62,7 @@
                                 x:Name="SelectedBackgroundBorder"
                                 Background="{DynamicResource Divider}"
                                 Opacity="0" />
-                            <wpf:Ripple
+                            <customRipple:Ripple
                                 x:Name="Ripple"
                                 Padding="{TemplateBinding Padding}"
                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -289,7 +289,7 @@
                                 Background="{DynamicResource SelectionBgBrush}"
                                 BorderBrush="{DynamicResource SelectionBorderBrush}"
                                 Opacity="0" />
-                            <wpf:Ripple
+                            <customRipple:Ripple
                                 x:Name="Ripple"
                                 Padding="{TemplateBinding Padding}"
                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -438,7 +438,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Opacity="0" />
-                            <wpf:Ripple
+                            <customRipple:Ripple
                                 Padding="{TemplateBinding Padding}"
                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"

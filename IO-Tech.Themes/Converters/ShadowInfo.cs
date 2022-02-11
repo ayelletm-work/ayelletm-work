@@ -12,7 +12,7 @@ namespace IO_Tech.Themes.Converters
 
         static ShadowInfo()
         {
-            var resourceDictionary = new ResourceDictionary { Source = new Uri("/IO-Tech.Themes;component/Styles/Assets.xaml", UriKind.Absolute) };
+            var resourceDictionary = new ResourceDictionary { Source = new Uri("pack://application:,,,/IO-Tech.Themes;component/Styles/Assets.xaml", UriKind.Absolute) };
 
             ShadowsDictionary = new Dictionary<ShadowDepth, DropShadowEffect?>
             {

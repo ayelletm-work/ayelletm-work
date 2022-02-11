@@ -530,8 +530,9 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="ScrollViewer">
+    <Style x:Key="ScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="CanContentScroll" Value="True" />
         <Setter Property="Template" Value="{StaticResource ScrollViewerTemplate}" />
     </Style>
+    <Style BasedOn="{StaticResource ScrollViewerStyle}" TargetType="ScrollViewer" />
 </ResourceDictionary>

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
@@ -17,7 +13,8 @@ namespace IO_Tech.Themes.Converters
 
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            if (!(value is SolidColorBrush solidColorBrush)) return null;
+            var solidColorBrush = value as SolidColorBrush;
+            if (solidColorBrush is null) return null;
 
             var color = solidColorBrush.Color;
 

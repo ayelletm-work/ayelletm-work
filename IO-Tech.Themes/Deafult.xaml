@@ -8,10 +8,41 @@
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ListBox.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/TextBox.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Button.xaml" />
-
-
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/CheckBox.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ComboBox.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/DataGrid.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/ValidationError.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Thumb.xaml" />
+        <ResourceDictionary Source="/IO-Tech.Themes;component/Styles/Menu.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomPackIcon/PackIcon.xaml" />
         <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomUnderline/Underline.xaml" />
 
     </ResourceDictionary.MergedDictionaries>
+
+    <Style BasedOn="{StaticResource RaisedButtonStyle}" TargetType="{x:Type Button}" />
+    <Style BasedOn="{StaticResource CheckBoxStyle}" TargetType="{x:Type CheckBox}" />
+    <Style BasedOn="{StaticResource ComboBox}" TargetType="{x:Type ComboBox}" />
+    <Style BasedOn="{StaticResource ContextMenuStyle}" TargetType="{x:Type ContextMenu}" />
+    <Style BasedOn="{StaticResource ThumbStyle}" TargetType="{x:Type Thumb}" />
+    <Style BasedOn="{StaticResource DataGridStyle}" TargetType="{x:Type DataGrid}" />
+    <Style BasedOn="{StaticResource DataGridCell}" TargetType="{x:Type DataGridCell}" />
+    <Style BasedOn="{StaticResource DataGridColumnHeader}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style BasedOn="{StaticResource DataGridRow}" TargetType="{x:Type DataGridRow}" />
+    <Style BasedOn="{StaticResource DataGridRowHeader}" TargetType="{x:Type DataGridRowHeader}" />
+
+    <Style BasedOn="{StaticResource ListBoxStyle}" TargetType="{x:Type ListBox}" />
+    <Style BasedOn="{StaticResource ListBoxItem}" TargetType="{x:Type ListBoxItem}" />
+    <Style BasedOn="{StaticResource MenuStyle}" TargetType="{x:Type Menu}" />
+    <Style BasedOn="{StaticResource MenuItemStyle}" TargetType="{x:Type MenuItem}" />
+    <Style BasedOn="{StaticResource RaisedButtonStyle}" TargetType="{x:Type RepeatButton}" />
+    <Style BasedOn="{StaticResource ScrollBarStyle}" TargetType="{x:Type ScrollBar}" />
+
+    <Style BasedOn="{StaticResource TextBox}" TargetType="{x:Type TextBox}" />
+
+
+    <Style
+        x:Key="{x:Static MenuItem.SeparatorStyleKey}"
+        BasedOn="{StaticResource SeparatorStyle}"
+        TargetType="{x:Type Separator}" />
+
 </ResourceDictionary>

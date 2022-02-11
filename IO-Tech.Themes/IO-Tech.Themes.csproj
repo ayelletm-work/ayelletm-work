@@ -63,35 +63,67 @@
     <Compile Include="Converters\BorderClipConverter.cs" />
     <Compile Include="Converters\BrushOpacityConverter.cs" />
     <Compile Include="Converters\BrushRoundConverter.cs" />
+    <Compile Include="Converters\BrushToRadialGradientBrushConverter.cs" />
+    <Compile Include="Converters\CircularProgressBar\ArcEndPointConverter.cs" />
+    <Compile Include="Converters\CircularProgressBar\ArcSizeConverter.cs" />
+    <Compile Include="Converters\CircularProgressBar\LocalEx.cs" />
+    <Compile Include="Converters\CircularProgressBar\RotateTransformCentreConverter.cs" />
+    <Compile Include="Converters\CircularProgressBar\StartPointConverter.cs" />
+    <Compile Include="Converters\ComboBoxClearButtonMarginConverter.cs" />
     <Compile Include="Converters\DoubleToThicknessConverter.cs" />
+    <Compile Include="Converters\DrawerOffsetConverter.cs" />
     <Compile Include="Converters\EqualityToVisibilityConverter.cs" />
+    <Compile Include="Converters\ExpanderRotateAngleConverter.cs" />
+    <Compile Include="Converters\FallbackBrushConverter.cs" />
     <Compile Include="Converters\FloatingHintOffsetCalculationConverter.cs" />
+    <Compile Include="Converters\FloatingHintTransformConverter.cs" />
     <Compile Include="Converters\GridLinesVisibilityBorderToThicknessConverter.cs" />
     <Compile Include="Converters\HintProxyFabricConverter.cs" />
+    <Compile Include="Converters\HorizontalThicknessConverter.cs" />
+    <Compile Include="Converters\InvertBooleanConverter.cs" />
+    <Compile Include="Converters\ListViewItemContainerStyleConverter.cs" />
     <Compile Include="Converters\MathConverter.cs" />
     <Compile Include="Converters\MathMultipleConverter.cs" />
     <Compile Include="Converters\MathOperation.cs" />
     <Compile Include="Converters\NotConverter.cs" />
     <Compile Include="Converters\NotZeroConverter.cs" />
     <Compile Include="Converters\NotZeroToVisibilityConverter.cs" />
+    <Compile Include="Converters\NullableDateTimeToCurrentDateConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\PointValueConverter.cs" />
+    <Compile Include="Converters\RangeLengthConverter.cs" />
     <Compile Include="Converters\RemoveAlphaBrushConverter.cs" />
     <Compile Include="Converters\ShadowConverter.cs" />
     <Compile Include="Converters\ShadowEdgeConverter.cs" />
     <Compile Include="Converters\ShadowInfo.cs" />
+    <Compile Include="Converters\SizeToRectConverter.cs" />
+    <Compile Include="Converters\SliderValueLabelPositionConverter.cs" />
     <Compile Include="Converters\TextFieldClearButtonVisibilityConverter.cs" />
+    <Compile Include="Converters\TextFieldHintVisibilityConverter.cs" />
     <Compile Include="Converters\TextFieldPrefixTextVisibilityConverter.cs" />
+    <Compile Include="Converters\TimeToVisibilityConverter.cs" />
     <Compile Include="Converters\TopThicknessConverter.cs" />
     <Compile Include="Converters\ToUpperConverter.cs" />
     <Compile Include="CustomControls\CustomCard\Card.cs" />
     <Compile Include="CustomControls\CustomListSortDirectionIndicator\ListSortDirectionIndicator.cs" />
+    <Compile Include="CustomControls\CustomPopupEx\ComboBoxPopup.cs" />
     <Compile Include="CustomControls\CustomPopupEx\PopupEx.cs" />
     <Compile Include="CustomControls\CustomRipple\Ripple.cs" />
     <Compile Include="CustomControls\CustomUnderline\Underline.cs" />
     <Compile Include="CustomControls\CustomWindow\ModernWindow.cs" />
+    <Compile Include="CustomControls\DpiHelper.cs" />
+    <Compile Include="CustomControls\ScaleHelper.cs" />
+    <Compile Include="CustomControls\Screen.cs" />
+    <Compile Include="CustomControls\TreeHelper.cs" />
     <Compile Include="Helpers\BottomDashedLineAdorner.cs" />
+    <Compile Include="Helpers\ButtonAssist.cs" />
+    <Compile Include="Helpers\ButtonProgressAssist.cs" />
     <Compile Include="Helpers\ClearText.cs" />
+    <Compile Include="Helpers\ColorZoneAssist.cs" />
+    <Compile Include="Helpers\ColorZoneMode.cs" />
+    <Compile Include="Helpers\ComboBoxAssist.cs" />
     <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\DataGridAssist.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\HintAssist.cs" />
     <Compile Include="Helpers\HintProxyFabric.ComboBox.cs" />
@@ -203,6 +235,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\DataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +252,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,6 +272,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Thumb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ValidationError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

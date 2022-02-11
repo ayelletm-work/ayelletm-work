@@ -10,9 +10,7 @@ using System.Windows.Media.Animation;
 
 namespace IO_Tech.Themes.CustomControls.CustomRipple
 {
-
-    namespace MaterialDesignThemes.Wpf
-    {
+ 
         [TemplateVisualState(GroupName = "CommonStates", Name = TemplateStateNormal)]
         [TemplateVisualState(GroupName = "CommonStates", Name = TemplateStateMousePressed)]
         [TemplateVisualState(GroupName = "CommonStates", Name = TemplateStateMouseOut)]
@@ -359,5 +357,4 @@ namespace IO_Tech.Themes.CustomControls.CustomRipple
             #endregion
 
         }
-    }
-}
+    } 

@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using IO_Tech.Themes.CustomControls.CustomRipple.MaterialDesignThemes.Wpf;
+using IO_Tech.Themes.CustomControls.CustomRipple;
 
 namespace IO_Tech.Themes.Helpers
 {
@@ -32,7 +32,7 @@ namespace IO_Tech.Themes.Helpers
 
             ListBoxItem? listBoxItem = null;
             Ripple? ripple = null;
-            foreach (var dependencyObject in result.VisualHit.GetVisualAncestry().TakeWhile(_ => listBoxItem is null))
+            foreach (var dependencyObject in result.VisualHit.GetLogicalAncestry().TakeWhile(_ => listBoxItem is null))
             {
                 listBoxItem = dependencyObject as ListBoxItem;
                 if (ripple is null)

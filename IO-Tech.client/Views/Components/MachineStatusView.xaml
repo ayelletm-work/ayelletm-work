@@ -14,7 +14,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <TextBlock Style="{DynamicResource TitlesTextBlock}" Text="MACHINE STATUS" />
-
+<Button></Button>
         </Grid>
     </Border>
 </UserControl>

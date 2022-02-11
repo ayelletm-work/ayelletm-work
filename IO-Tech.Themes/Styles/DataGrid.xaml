@@ -21,8 +21,8 @@
     <converters:GridLinesVisibilityBorderToThicknessConverter x:Key="GridLinesVisibilityBorderToThicknessConverter" />
 
     <Style
-        x:Key="MaterialDesignDataGridCheckBoxColumnStyle"
-        BasedOn="{StaticResource MaterialDesignCheckBox}"
+        x:Key="DataGridCheckBoxColumnStyle"
+        BasedOn="{StaticResource CheckBoxStyle}"
         TargetType="{x:Type CheckBox}">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="IsHitTestVisible" Value="False" />
@@ -30,8 +30,8 @@
     </Style>
 
     <Style
-        x:Key="MaterialDesignDataGridCheckBoxColumnEditingStyle"
-        BasedOn="{StaticResource MaterialDesignCheckBox}"
+        x:Key="DataGridCheckBoxColumnEditingStyle"
+        BasedOn="{StaticResource CheckBoxStyle}"
         TargetType="{x:Type CheckBox}">
         <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
@@ -39,7 +39,7 @@
     <Style
         x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type ComboBox},
                                      ResourceId=MaterialDataGridComboBoxColumnStyle}"
-        BasedOn="{StaticResource MaterialDesignDataGridComboBox}"
+        BasedOn="{StaticResource DataGridComboBox}"
         TargetType="{x:Type ComboBox}">
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="Focusable" Value="False" />
@@ -48,16 +48,16 @@
     <Style
         x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type ComboBox},
                                      ResourceId=MaterialDataGridComboBoxColumnEditingStyle}"
-        BasedOn="{StaticResource MaterialDesignDataGridComboBox}"
+        BasedOn="{StaticResource DataGridComboBox}"
         TargetType="{x:Type ComboBox}" />
 
     <Style
-        x:Key="MaterialDesignDataGridTextColumnEditingStyle"
-        BasedOn="{StaticResource MaterialDesignTextBox}"
+        x:Key="DataGridTextColumnEditingStyle"
+        BasedOn="{StaticResource TextBox}"
         TargetType="{x:Type TextBox}">
         <Setter Property="Margin" Value="-1,0,-1,-4" />
         <Setter Property="BorderThickness" Value="0,0,0,2" />
-        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DividerBackground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -73,6 +73,7 @@
                                 x:Name="PART_ContentHost"
                                 Focusable="false"
                                 HorizontalScrollBarVisibility="Hidden"
+                                Style="{DynamicResource ScrollViewerStyle}"
                                 VerticalScrollBarVisibility="Hidden" />
                             <customSmartHint:SmartHint
                                 x:Name="Hint"
@@ -87,7 +88,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Validation.HasError" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource MaterialDesignValidationErrorBrush}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource RedBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -96,7 +97,7 @@
     </Style>
 
     <Style
-        x:Key="MaterialDesignDataGridTextColumnStyle"
+        x:Key="DataGridTextColumnStyle"
         BasedOn="{StaticResource {x:Type TextBlock}}"
         TargetType="{x:Type TextBlock}">
         <Setter Property="Validation.ErrorTemplate">
@@ -105,7 +106,7 @@
                     <Border
                         Margin="-1,0,-1,-4"
                         Padding="1,0,1,2"
-                        BorderBrush="{DynamicResource MaterialDesignValidationErrorBrush}"
+                        BorderBrush="{DynamicResource RedBrush}"
                         BorderThickness="0,0,0,2">
                         <AdornedElementPlaceholder />
                     </Border>
@@ -115,12 +116,11 @@
     </Style>
 
     <Style
-        x:Key="MaterialDesignDataGridTextColumnPopupEditingStyle"
-        BasedOn="{StaticResource MaterialDesignTextBox}"
+        x:Key="DataGridTextColumnPopupEditingStyle"
+        BasedOn="{StaticResource TextBox}"
         TargetType="{x:Type TextBox}">
         <Setter Property="Margin" Value="-1,0,-1,-4" />
         <Setter Property="BorderThickness" Value="0,0,0,2" />
-        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -138,7 +138,7 @@
                                 <AdornerDecorator CacheMode="{Binding RelativeSource={RelativeSource Self}, Path=(wpf:ShadowAssist.CacheMode)}">
                                     <Border
                                         Margin="5,5,5,5"
-                                        Background="{DynamicResource MaterialDesignPaper}"
+                                        Background="{DynamicResource SectionBackground}"
                                         BorderThickness="1"
                                         CornerRadius="2"
                                         Effect="{DynamicResource ShadowDepth2}" />
@@ -147,7 +147,7 @@
                                     Margin="5,5,5,5"
                                     Padding="16"
                                     Background="Transparent"
-                                    BorderBrush="{DynamicResource MaterialDesignDivider}"
+                                    BorderBrush="{DynamicResource DividerBackground}"
                                     BorderThickness="1"
                                     CornerRadius="2">
                                     <Grid>
@@ -167,11 +167,12 @@
                                             BorderBrush="{TemplateBinding BorderBrush}"
                                             BorderThickness="{TemplateBinding BorderThickness}"
                                             SnapsToDevicePixels="True">
-                                            <Grid Validation.ErrorTemplate="{StaticResource MaterialDesignValidationErrorTemplate}">
+                                            <Grid Validation.ErrorTemplate="{DynamicResource ValidationErrorTemplate}">
                                                 <ScrollViewer
                                                     x:Name="PART_ContentHost"
                                                     Focusable="false"
                                                     HorizontalScrollBarVisibility="Hidden"
+                                                    Style="{DynamicResource ScrollViewerStyle}"
                                                     VerticalScrollBarVisibility="Hidden" />
                                                 <customSmartHint:SmartHint
                                                     x:Name="Hint"
@@ -198,7 +199,7 @@
                                                             Margin="0,2"
                                                             HorizontalAlignment="{TemplateBinding wpf:ValidationAssist.HorizontalAlignment}"
                                                             FontSize="{TemplateBinding wpf:ValidationAssist.FontSize}"
-                                                            Foreground="{DynamicResource MaterialDesignValidationErrorBrush}"
+                                                            Foreground="{DynamicResource RedBrush}"
                                                             Text="{Binding ErrorContent}"
                                                             TextWrapping="Wrap"
                                                             UseLayoutRounding="false" />
@@ -227,7 +228,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Validation.HasError" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource MaterialDesignValidationErrorBrush}" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource RedBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -252,17 +253,17 @@
                             Margin="8,8,3,3"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Bottom"
-                            Fill="{DynamicResource MaterialDesignBody}"
+                            Fill="{DynamicResource PrimaryForeground}"
                             Opacity="0.5"
                             Points="0,10 10,10 10,0"
                             Stretch="Uniform" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource MaterialDesignDataGridRowHoverBackground}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource ControlHoverPrimaryBgBrush}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource MaterialDesignSelection}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SelectionBgBrush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Arrow" Property="Visibility" Value="Collapsed" />
@@ -273,7 +274,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="MaterialDesignDataGridCell" TargetType="{x:Type DataGridCell}">
+    <Style x:Key="DataGridCell" TargetType="{x:Type DataGridCell}">
         <Setter Property="Padding" Value="{Binding RelativeSource={RelativeSource Self}, Path=(wpf:DataGridAssist.CellPadding)}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -295,14 +296,14 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource SelectionBgBrush}" />
             </Trigger>
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
                     <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True" />
                     <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Value="False" />
                 </MultiDataTrigger.Conditions>
-                <Setter Property="Background" Value="{DynamicResource MaterialDesignSelection}" />
+                <Setter Property="Background" Value="{DynamicResource SelectionBgBrush}" />
             </MultiDataTrigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value=".56" />
@@ -310,11 +311,11 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="MaterialDesignDataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}">
+    <Style x:Key="DataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="TextBlock.FontWeight" Value="Medium" />
         <Setter Property="Padding" Value="{Binding RelativeSource={RelativeSource Self}, Path=(wpf:DataGridAssist.ColumnHeaderPadding)}" />
-        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignColumnHeader}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColumnHeader}" />
         <Setter Property="BorderBrush" Value="{Binding HorizontalGridLinesBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
         <Setter Property="BorderThickness" Value="{Binding GridLinesVisibility, RelativeSource={RelativeSource AncestorType=DataGrid}, Converter={StaticResource GridLinesVisibilityBorderToThicknessConverter}}" />
         <Setter Property="Template">
@@ -375,13 +376,13 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
                         </Trigger>
                         <Trigger Property="SortDirection" Value="Ascending">
-                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
                         </Trigger>
                         <Trigger Property="SortDirection" Value="Descending">
-                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
                         </Trigger>
                         <Trigger SourceName="SortDirectionIndicator" Property="IsNeutral" Value="False">
                             <Trigger.EnterActions>
@@ -398,7 +399,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="MaterialDesignDataGridRowHeader" TargetType="{x:Type DataGridRowHeader}">
+    <Style x:Key="DataGridRowHeader" TargetType="{x:Type DataGridRowHeader}">
         <Setter Property="BorderBrush" Value="{Binding HorizontalGridLinesBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
         <Setter Property="BorderThickness" Value="{Binding GridLinesVisibility, RelativeSource={RelativeSource AncestorType=DataGrid}, Converter={StaticResource GridLinesVisibilityBorderToThicknessConverter}}" />
         <Setter Property="Template">
@@ -435,7 +436,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="MaterialDesignDataGridRow" TargetType="{x:Type DataGridRow}">
+    <Style x:Key="DataGridRow" TargetType="{x:Type DataGridRow}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
@@ -490,10 +491,10 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{DynamicResource MaterialDesignSelection}" />
+                <Setter Property="Background" Value="{DynamicResource SelectionBgBrush}" />
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource MaterialDesignDataGridRowHoverBackground}" />
+                <Setter Property="Background" Value="{DynamicResource ControlHoverPrimaryBgBrush}" />
             </Trigger>
             <Trigger Property="IsNewItem" Value="True">
                 <Setter Property="Margin" Value="{Binding NewItemMargin, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
@@ -501,31 +502,30 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="MaterialDesignDataGrid" TargetType="{x:Type DataGrid}">
-        <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
-        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignDivider}" />
+    <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="Background" Value="{DynamicResource SectionBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DividerBackground}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="CanUserReorderColumns" Value="False" />
+        <Setter Property="CanUserResizeColumns" Value="False" />
+        <Setter Property="CanUserResizeRows" Value="False" />
+        <Setter Property="HeadersVisibility" Value="Column" />
+        <Setter Property="FontSize" Value="{DynamicResource TextFontSize}" />
         <Setter Property="GridLinesVisibility" Value="Horizontal" />
-        <Setter Property="HorizontalGridLinesBrush">
-            <Setter.Value>
-                <MultiBinding Converter="{StaticResource RemoveAlphaBrushConverter}">
-                    <Binding Path="BorderBrush" RelativeSource="{RelativeSource Self}" />
-                    <Binding Path="Background" RelativeSource="{RelativeSource Self}" />
-                </MultiBinding>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource DividerBackground}" />
         <Setter Property="VerticalGridLinesBrush" Value="{Binding HorizontalGridLinesBrush, RelativeSource={RelativeSource Self}}" />
         <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
-        <Setter Property="HeadersVisibility" Value="Column" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
-        <Setter Property="wpf:DataGridAssist.AutoGeneratedCheckBoxStyle" Value="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" />
-        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingCheckBoxStyle" Value="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
-        <Setter Property="wpf:DataGridAssist.AutoGeneratedTextStyle" Value="{StaticResource MaterialDesignDataGridTextColumnStyle}" />
-        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingTextStyle" Value="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+        <Setter Property="wpf:DataGridAssist.AutoGeneratedCheckBoxStyle" Value="{DynamicResource DataGridCheckBoxColumnStyle}" />
+        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingCheckBoxStyle" Value="{DynamicResource DataGridCheckBoxColumnEditingStyle}" />
+        <Setter Property="wpf:DataGridAssist.AutoGeneratedTextStyle" Value="{DynamicResource DataGridTextColumnStyle}" />
+        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingTextStyle" Value="{DynamicResource DataGridTextColumnEditingStyle}" />
         <Setter Property="wpf:DataGridAssist.EnableEditBoxAssist" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
@@ -612,4 +612,5 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+
 </ResourceDictionary>

@@ -6,11 +6,6 @@
     xmlns:customSmartHint="clr-namespace:IO_Tech.Themes.CustomControls.CustomSmartHint"
     xmlns:customUnderline="clr-namespace:IO_Tech.Themes.CustomControls.CustomUnderline"
     xmlns:helpers="clr-namespace:IO_Tech.Themes.Helpers">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ValidationErrorTemplate.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Menu.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
-    </ResourceDictionary.MergedDictionaries>
 
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <converters:TextFieldClearButtonVisibilityConverter x:Key="ClearButtonVisibilityConverter" />
@@ -21,14 +16,14 @@
 
 
 
-    <Style x:Key="MaterialDesignTextBoxBase" TargetType="{x:Type TextBoxBase}">
+    <Style x:Key="TextBoxBase" TargetType="{x:Type TextBoxBase}">
         <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DividerBackground}" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="helpers:TextFieldAssist.TextBoxViewMargin" Value="{x:Static helpers:Constants.DefaultTextBoxViewMargin}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="CaretBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="SelectionBrush" Value="{DynamicResource PrimaryHueLightBrush}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource DividerBackground}" />
+        <Setter Property="SelectionBrush" Value="{DynamicResource SelectionBgBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Top" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -36,10 +31,10 @@
         <Setter Property="Padding" Value="{x:Static helpers:Constants.TextBoxDefaultPadding}" />
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
-        <Setter Property="Validation.ErrorTemplate" Value="{DynamicResource MaterialDesignValidationErrorTemplate}" />
-        <Setter Property="helpers:TextFieldAssist.UnderlineBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="helpers:HintAssist.Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="ContextMenu" Value="{StaticResource MaterialDesignDefaultContextMenu}" />
+        <Setter Property="Validation.ErrorTemplate" Value="{DynamicResource ValidationErrorTemplate}" />
+        <Setter Property="helpers:TextFieldAssist.UnderlineBrush" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="helpers:HintAssist.Foreground" Value="{DynamicResource SecondaryForeground}" />
+        <Setter Property="ContextMenu" Value="{DynamicResource DefaultContextMenuStyle}" />
         <Setter Property="Cursor" Value="IBeam" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Local" />
         <Setter Property="helpers:TextFieldAssist.IncludeSpellingSuggestions" Value="{Binding RelativeSource={RelativeSource Self}, Path=(SpellCheck.IsEnabled)}" />
@@ -54,7 +49,7 @@
                         <Border
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            Background="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"
+                            Background="{DynamicResource SectionBackground}"
                             CornerRadius="{TemplateBinding helpers:TextFieldAssist.TextFieldCornerRadius}"
                             RenderTransformOrigin="0.5,0.5"
                             Visibility="{TemplateBinding helpers:TextFieldAssist.RippleOnFocusEnabled,
@@ -180,7 +175,7 @@
                                         Padding="2,0,0,0"
                                         Command="{x:Static helpers:ClearText.ClearCommand}"
                                         Focusable="False"
-                                        Style="{StaticResource MaterialDesignToolButton}">
+                                        Style="{StaticResource ToolButtonStyle}">
                                         <Button.Visibility>
                                             <MultiBinding Converter="{StaticResource ClearButtonVisibilityConverter}">
                                                 <Binding Path="(helpers:TextFieldAssist.HasClearButton)" RelativeSource="{RelativeSource TemplatedParent}" />
@@ -307,14 +302,14 @@
                         </MultiTrigger>
                         <Trigger Property="helpers:TextFieldAssist.HasFilledTextField" Value="True">
                             <Setter Property="Padding" Value="16,8,12,8" />
-                            <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
+                            <Setter Property="Background" Value="{DynamicResource TextFieldBoxBackground}" />
                             <Setter Property="helpers:TextFieldAssist.TextBoxViewMargin" Value="{x:Static helpers:Constants.DefaultTextBoxViewMarginEmbedded}" />
                             <Setter TargetName="HelperTextTextBlock" Property="Margin" Value="16,0,0,0" />
                         </Trigger>
                         <Trigger Property="helpers:TextFieldAssist.HasOutlinedTextField" Value="True">
                             <Setter Property="VerticalContentAlignment" Value="Top" />
                             <Setter Property="BorderThickness" Value="1" />
-                            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextAreaBorder}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource TextAreaBorder}" />
                             <Setter Property="Padding" Value="16,16,12,16" />
                             <Setter Property="helpers:TextFieldAssist.TextBoxViewMargin" Value="{x:Static helpers:Constants.DefaultTextBoxViewMarginEmbedded}" />
                             <Setter TargetName="Underline" Property="Visibility" Value="Collapsed" />
@@ -340,7 +335,7 @@
                                 <Condition SourceName="Hint" Property="IsHintInFloatingPosition" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="HintBackgroundBorder" Property="Padding" Value="4,0" />
-                            <Setter Property="helpers:HintAssist.Background" Value="{DynamicResource MaterialDesignPaper}" />
+                            <Setter Property="helpers:HintAssist.Background" Value="{DynamicResource Paper}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -395,7 +390,7 @@
                                 <Condition Property="IsEnabled" Value="False" />
                                 <Condition Property="helpers:TextFieldAssist.HasOutlinedTextField" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextAreaInactiveBorder}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource TextAreaInactiveBorder}" />
                             <Setter TargetName="PrefixTextBlock" Property="Opacity" Value="{x:Static helpers:Constants.TextBoxNotEnabledOpacity}" />
                             <Setter TargetName="PART_ContentHost" Property="Opacity" Value="{x:Static helpers:Constants.TextBoxNotEnabledOpacity}" />
                             <Setter TargetName="SuffixTextBlock" Property="Opacity" Value="{x:Static helpers:Constants.TextBoxNotEnabledOpacity}" />
@@ -457,7 +452,7 @@
                                 <Condition Property="IsMouseOver" Value="True" />
                                 <Condition Property="helpers:TextFieldAssist.HasFilledTextField" Value="True" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}" />
+                            <Setter Property="Background" Value="{DynamicResource TextFieldBoxHoverBackground}" />
                             <Setter TargetName="borderUnderline" Property="Height" Value="1" />
                         </MultiTrigger>
                         <MultiTrigger>
@@ -471,8 +466,8 @@
 
                         <!--  Validation.HasError  -->
                         <Trigger Property="Validation.HasError" Value="true">
-                            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignValidationErrorBrush}" />
-                            <Setter TargetName="Underline" Property="Background" Value="{DynamicResource MaterialDesignValidationErrorBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ValidationErrorBrush}" />
+                            <Setter TargetName="Underline" Property="Background" Value="{DynamicResource ValidationErrorBrush}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -481,7 +476,7 @@
                             </MultiTrigger.Conditions>
                             <Setter TargetName="border" Property="Margin" Value="-1" />
                             <Setter Property="BorderThickness" Value="2" />
-                            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignValidationErrorBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ValidationErrorBrush}" />
                             <Setter TargetName="FooterGrid" Property="Margin" Value="0,0,1,0" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
@@ -491,20 +486,20 @@
     </Style>
 
     <Style
-        x:Key="MaterialDesignTextBox"
-        BasedOn="{StaticResource MaterialDesignTextBoxBase}"
+        x:Key="TextBox"
+        BasedOn="{StaticResource TextBoxBase}"
         TargetType="{x:Type TextBox}" />
 
     <Style
-        x:Key="MaterialDesignFloatingHintTextBox"
-        BasedOn="{StaticResource MaterialDesignTextBox}"
+        x:Key="FloatingHintTextBox"
+        BasedOn="{StaticResource TextBox}"
         TargetType="{x:Type TextBox}">
         <Setter Property="helpers:HintAssist.IsFloating" Value="True" />
     </Style>
 
     <Style
-        x:Key="MaterialDesignFilledTextBox"
-        BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}"
+        x:Key="FilledTextBox"
+        BasedOn="{StaticResource FloatingHintTextBox}"
         TargetType="{x:Type TextBox}">
         <Setter Property="helpers:TextFieldAssist.HasFilledTextField" Value="True" />
         <Setter Property="helpers:TextFieldAssist.RippleOnFocusEnabled" Value="True" />
@@ -513,8 +508,8 @@
     </Style>
 
     <Style
-        x:Key="MaterialDesignOutlinedTextBox"
-        BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}"
+        x:Key="OutlinedTextBox"
+        BasedOn="{StaticResource FloatingHintTextBox}"
         TargetType="{x:Type TextBox}">
         <Setter Property="helpers:TextFieldAssist.HasOutlinedTextField" Value="True" />
         <Setter Property="helpers:TextFieldAssist.TextFieldCornerRadius" Value="4" />

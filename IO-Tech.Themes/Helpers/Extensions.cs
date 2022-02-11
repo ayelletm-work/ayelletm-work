@@ -81,7 +81,7 @@ namespace IO_Tech.Themes.Helpers
         public static bool IsDescendantOf(this DependencyObject? leaf, DependencyObject? ancestor)
         {
             DependencyObject? parent = null;
-            foreach (var node in leaf.GetVisualAncestry())
+            foreach (var node in leaf.GetLogicalAncestry())
             {
                 if (Equals(node, ancestor))
                     return true;

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
@@ -31,11 +27,11 @@ namespace IO_Tech.Themes.Converters
             double floatingHintHeight = hintHeight * floatingScale;
 
             double offset = (values.Length > 4 ? values[4] : null) switch
-                {
+            {
                 Thickness padding => (floatingHintHeight / 2) + padding.Top,
                 double parentHeight => (parentHeight - hintHeight + floatingHintHeight) / 2,
                 _ => floatingHintHeight
-                };
+            };
 
             if (IsType<Point>(targetType))
             {

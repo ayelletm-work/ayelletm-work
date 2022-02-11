@@ -25,6 +25,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <views:HeaderView />
+
         <ContentControl
             Grid.Row="2"
             Content="{Binding}"
