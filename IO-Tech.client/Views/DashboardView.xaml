@@ -37,7 +37,7 @@
 
         <comp:StatusSummeryView Grid.Column="2" />
 
-        <comp:ReadyForPrintView Grid.Row="5" Grid.Column="2" />
+        <!--<comp:ReadyForPrintView Grid.Row="5" Grid.Column="2" />-->
         <local:CurrentPrintControllerView Grid.RowSpan="5" Grid.Column="4" />
     </Grid>
 </UserControl>

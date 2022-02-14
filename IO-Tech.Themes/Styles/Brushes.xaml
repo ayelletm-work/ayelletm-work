@@ -37,7 +37,7 @@
     <Color x:Key="NeutralColor">#ccd9e3</Color>
 
 
-    <Color x:Key="ShadowColor">#000000</Color>
+    <Color x:Key="ShadowColor">#FF000000</Color>
 
     <!--  Layout Brushes  -->
 

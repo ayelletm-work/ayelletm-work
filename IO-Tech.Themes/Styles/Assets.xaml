@@ -25,7 +25,7 @@
         Opacity=".42"
         RenderingBias="Performance"
         ShadowDepth="1"
-        Color="{DynamicResource ShadowBrush}" />
+        Color="{DynamicResource ShadowColor}" />
     <DropShadowEffect
         x:Key="ShadowDepth2"
         BlurRadius="8"
@@ -33,7 +33,7 @@
         Opacity=".42"
         RenderingBias="Performance"
         ShadowDepth="1.5"
-        Color="{DynamicResource ShadowBrush}" />
+        Color="{DynamicResource ShadowColor}" />
     <DropShadowEffect
         x:Key="ShadowDepth3"
         BlurRadius="14"
@@ -41,7 +41,7 @@
         Opacity=".42"
         RenderingBias="Performance"
         ShadowDepth="4.5"
-        Color="{DynamicResource ShadowBrush}" />
+        Color="{DynamicResource ShadowColor}" />
     <DropShadowEffect
         x:Key="ShadowDepth4"
         BlurRadius="25"
@@ -49,7 +49,7 @@
         Opacity=".42"
         RenderingBias="Performance"
         ShadowDepth="8"
-        Color="{DynamicResource ShadowBrush}" />
+        Color="{DynamicResource ShadowColor}" />
     <DropShadowEffect
         x:Key="ShadowDepth5"
         BlurRadius="35"
@@ -57,6 +57,6 @@
         Opacity=".42"
         RenderingBias="Performance"
         ShadowDepth="13"
-        Color="{DynamicResource ShadowBrush}" />
+        Color="{DynamicResource ShadowColor}" />
 
 </ResourceDictionary>
