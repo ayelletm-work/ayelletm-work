@@ -6,11 +6,23 @@
     xmlns:local="clr-namespace:IO_Tech.client.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Border Background="{DynamicResource SectionBackground}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-        </Grid>
-    </Border>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="{DynamicResource SpacerGridLength}" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="{DynamicResource SpacerGridLength}" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="{DynamicResource SpacerGridLength}" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Background="{DynamicResource SectionBackground}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+            </Grid>
+        </Border>
+        <Expander Header="" />
+    </Grid>
 </UserControl>
