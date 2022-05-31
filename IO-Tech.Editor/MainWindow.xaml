@@ -1,0 +1,31 @@
+﻿<customWindow:ModernWindow
+    x:Class="IO_Tech.Editor.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:customWindow="clr-namespace:IO_Tech.Themes.CustomControls.CustomWindow;assembly=IO-Tech.Themes"
+    xmlns:editor="clr-namespace:IO_Tech.Editor"
+    xmlns:views="clr-namespace:IO_Tech.Editor.Views"
+    Title="MainWindow"
+    Style="{DynamicResource ShellWindowStyle}">
+    <customWindow:ModernWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/IO-Tech.Themes;component/CustomControls/CustomWindow/ModernWindow.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </customWindow:ModernWindow.Resources>
+    <Grid Margin="{DynamicResource SpacerMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="{DynamicResource SpacerGridLength}" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+     
+        <views:ToolBoxView  Grid.Row="2"/>
+
+    </Grid>
+</customWindow:ModernWindow>

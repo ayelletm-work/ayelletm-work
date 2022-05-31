@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30611.23
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO-Tech.client", "IO-Tech.client\IO-Tech.client.csproj", "{7807C940-67E0-484C-A61A-1E7EB42DE2E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO-Tech.Themes", "IO-Tech.Themes\IO-Tech.Themes.csproj", "{BA78DE59-B496-4F61-8092-A2077298BE71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO-Tech.Editor", "IO-Tech.Editor\IO-Tech.Editor.csproj", "{8BC5BDB2-E227-41AE-BB77-0CF3D7868DA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BA78DE59-B496-4F61-8092-A2077298BE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA78DE59-B496-4F61-8092-A2077298BE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA78DE59-B496-4F61-8092-A2077298BE71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC5BDB2-E227-41AE-BB77-0CF3D7868DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC5BDB2-E227-41AE-BB77-0CF3D7868DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC5BDB2-E227-41AE-BB77-0CF3D7868DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC5BDB2-E227-41AE-BB77-0CF3D7868DA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

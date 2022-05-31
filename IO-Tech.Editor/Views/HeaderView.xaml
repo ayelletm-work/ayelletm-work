@@ -1,0 +1,56 @@
+﻿<UserControl
+    x:Class="IO_Tech.client.Views.HeaderView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:IO_Tech.Editor.ViewModels"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewModels:HeaderViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="{DynamicResource SpacerGridLength}" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Style="{DynamicResource SectionBorderStyle}">
+            <Path
+                Width="150"
+                Height="30"
+                Data="{DynamicResource LogoIcon}"
+                Fill="{DynamicResource PrimaryForeground}"
+                Stretch="Uniform" />
+        </Border>
+        <Border Grid.Column="2" Style="{DynamicResource SectionBorderStyle}">
+            <Menu VerticalAlignment="Top">
+                <MenuItem
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Header="File">
+                    <MenuItem Header="Save" />
+                    <MenuItem Header="Load" />
+                    <MenuItem Command="{Binding ExitCommand}" Header="Exit" />
+                </MenuItem>
+                <MenuItem Header="Options">
+                    <MenuItem Header="VisionDebug" />
+                    <MenuItem Header="Stretch" />
+                    <MenuItem Command="{Binding ShowResultForm}" Header="ResultForm" />
+                    <MenuItem Command="{Binding ShowSetupForm}" Header="SetupForm" />
+                </MenuItem>
+                <MenuItem Header="Mode">
+                    <RadioButton
+                        Name="radioBtnNew"
+                        Content="New Style"
+                        IsChecked="True" />
+                    <RadioButton Name="radioBtnOld" Content="Old Style" />
+                    <RadioButton Name="radioBtnShort" Content="Short Style" />
+                </MenuItem>
+            </Menu>
+        </Border>
+        <Border Grid.Column="4" Style="{DynamicResource SectionBorderStyle}" />
+    </Grid>
+</UserControl>

@@ -17,7 +17,9 @@ namespace IO_Tech.Themes.Converters
         public T FalseValue { get; set; }
 
         public virtual object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-            => value is bool boolValue && boolValue ? TrueValue : FalseValue;
+        {
+            return value is bool boolValue && boolValue ? TrueValue : FalseValue;
+        }
 
         public virtual object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
             => value is T tValue && EqualityComparer<T>.Default.Equals(tValue, TrueValue);
